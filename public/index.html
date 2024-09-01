@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="//unpkg.com/alpinejs" defer></script>
+  <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+  <script src="alpinedata.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>API Widgets</title>
+</head>
+
+<body>
+  <div x-data="bootcamp">
+
+    <div class="centered phone">
+      <h1>Wordgame</h1>
+      <input x-model="sentence" placeholder="Enter a sentence" style="width: 300px;" />
+      <button @click="gameWord">Provide answer</button>
+      <p>Longest Word: <span x-text="longestWord"></span></p>
+      <p>Shortest Word: <span x-text="shortestWord"></span></p>
+      <p>Total Word Lengths: <span x-text="totalLength"></span></p>
+    </div>
+
+
+    <div class="centered phone">
+      <h1>Total Phone Bill</h1>
+      <input x-model="bill" placeholder="Enter bill (e.g., call,sms,call)" style="width: 300px;" />
+      <button @click="calculateTotal">Calculate Total</button>
+      <p>Total Bill: <span x-text="total"></span></p>
+    </div>
+
+
+    <div class="centered phone">
+      <h1>Set Prices</h1>
+      <input x-model.number="callPrice" placeholder="Enter new call price" style="width: 150px;" />
+      <button @click="setPrice('call', callPrice)">Set Call Price</button>
+
+      <input x-model.number="smsPrice" placeholder="Enter new SMS price" style="width: 150px;" />
+      <button @click="setPrice('sms', smsPrice)">Set SMS Price</button>
+    </div>
+
+
+    <div class="centered phone">
+      <h1>Check Airtime</h1>
+      <input x-model="usage" placeholder="Enter usage (e.g., call,sms,call)" style="width: 300px;" />
+      <input x-model.number="available" placeholder="Enter available airtime" style="width: 150px;" />
+      <button @click="checkAirtime">Check Airtime</button>
+      <p>Remaining Airtime: <span x-text="result"></span></p>
+    </div>
+  </div>
+</body>
+
+</html>

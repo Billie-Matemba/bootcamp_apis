@@ -1,0 +1,57 @@
+### Total Phone Bill - Calculate Total
+POST http://localhost:3007/api/phonebill/total
+Content-Type: application/json
+
+{
+    "bill": "call,sms,call"
+}
+
+###
+
+### Get Current Call and SMS Prices
+GET http://localhost:3007/api/phonebill/prices
+Accept: application/json
+
+###
+
+### Set New Call Price
+POST http://localhost:3007/api/phonebill/price
+Content-Type: application/json
+
+{
+    "type": "call",
+    "price": 3.00
+}
+
+###
+
+### Set New SMS Price
+POST http://localhost:3007/api/phonebill/price
+Content-Type: application/json
+
+{
+    "type": "sms",
+    "price": 1.00
+}
+
+###
+
+### Check if Airtime is Enough
+POST http://localhost:3007/api/enough
+Content-Type: application/json
+
+{
+    "usage": "call,sms,call",
+    "available": 50.00
+}
+
+###
+
+### Word Game - Find Longest, Shortest Words, and Total Lengths
+GET http://localhost:3007/api/wordGame
+Accept: application/json
+Content-Type: application/json
+
+# Query Parameters
+sentence=The quick brown fox jumps over the lazy dog
+
